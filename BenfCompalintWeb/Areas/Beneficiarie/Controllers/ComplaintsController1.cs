@@ -1,4 +1,5 @@
 ﻿using BenfCompalintWeb.Areas.Beneficiarie.Service;
+using BenfCompalintWeb.Areas.Beneficiarie.ViewModels;
 using BenfCompalintWeb.Models;
 using BenfCompalintWeb.Models.CompalintInformation;
 using BenfCompalintWeb.Models.Data.Base;

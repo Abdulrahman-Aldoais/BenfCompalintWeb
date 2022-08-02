@@ -21,7 +21,7 @@
     <Folder Include="Areas\AdminGovernorate\Data\" />
     <Folder Include="Areas\AdminGovernorate\Models\" />
     <Folder Include="Areas\AdminGovernorate\Views\" />
-    <Folder Include="Areas\AdminService\Views\" />
+    <Folder Include="Areas\UsersService\Views\" />
     <Folder Include="Areas\AdminSubDirectorate\Data\" />
     <Folder Include="Areas\AdminSubDirectorate\Models\" />
     <Folder Include="Areas\Beneficiarie\Data\" />

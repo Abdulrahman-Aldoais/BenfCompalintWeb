@@ -8291,11 +8291,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\NewProject\\BenfCompalintWeb\\BenfCompalintWeb\\BenfCompalintWeb.csproj",
+      "projectUniqueName": "E:\\My_GitHub\\BenfCompalintWeb\\BenfCompalintWeb\\BenfCompalintWeb.csproj",
       "projectName": "BenfCompalintWeb",
-      "projectPath": "E:\\NewProject\\BenfCompalintWeb\\BenfCompalintWeb\\BenfCompalintWeb.csproj",
+      "projectPath": "E:\\My_GitHub\\BenfCompalintWeb\\BenfCompalintWeb\\BenfCompalintWeb.csproj",
       "packagesPath": "C:\\Users\\APS\\.nuget\\packages\\",
-      "outputPath": "E:\\NewProject\\BenfCompalintWeb\\BenfCompalintWeb\\obj\\",
+      "outputPath": "E:\\My_GitHub\\BenfCompalintWeb\\BenfCompalintWeb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\APS\\AppData\\Roaming\\NuGet\\NuGet.Config",

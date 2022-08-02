@@ -1,51 +1,87 @@
 ﻿
 @model IEnumerable<Compalint>
 
-<div class="container">
-    <div class="table-responsive">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <h2>عرض <b>الشكاوى</b></h2>
+
+
+
+
+
+
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="breadcrumb-wrapper py-3 mb-4">
+        <span class="text-muted fw-light">إدارة النظام    /</span> إدارة الشكاوي
+    </h4>
+
+
+
+    <div class="card">
+
+        <div class="row mx-2  ">
+            <div class="col-6">
+                <div class="t-d">
+                    <h5 class="card-header title-t" style="margin-left: 10px;"> إدارة الشكاوي</h5>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="card-datatable table-responsive">
+
+            <div class="row mx-2 border-bottom ">
+
+                <div class="me-3 table-type">
+                    <label class="form-label"> عرض حسب</label>
+                    <div class="dataTables_length" id="DataTables_Table_0_length">
+
+                        <div class="position-relative">
+                            <div class="position-relative">
+                                <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
+                                        class="select2 form-select select2-hidden-accessible"
+                                        tabindex="-1" aria-hidden="true" data-select2-id="10">
+                                    <option value="10" data-select2-id="12">مرفوضة</option>
+                                    <option value="25">محلولة</option>
+                                    <option value="50">غير محلولة</option>
+                                    <option value="100">مرفوعة</option>
+                                </select><span class="select2 select2-container select2-container--default select2-container--focus" dir="rtl" data-select2-id="11" style="width: 117.083px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-DataTables_Table_0_length-np-container"><span class="select2-selection__rendered" id="select2-DataTables_Table_0_length-np-container" role="textbox" aria-readonly="true" title="مرفوضة">مرفوضة</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <div class="position-relative">
+                                <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
+                                        class="select2 form-select select2-hidden-accessible"
+                                        tabindex="-1" aria-hidden="true" data-select2-id="10">
+                                    <option value="10" data-select2-id="12">مرفوضة</option>
+                                    <option value="25">محلولة</option>
+                                    <option value="50">غير محلولة</option>
+                                    <option value="100">مرفوعة</option>
+                                </select><span class="select2 select2-container select2-container--default select2-container--focus" dir="rtl" data-select2-id="11" style="width: 117.083px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-DataTables_Table_0_length-np-container"><span class="select2-selection__rendered" id="select2-DataTables_Table_0_length-np-container" role="textbox" aria-readonly="true" title="مرفوضة">مرفوضة</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <div class="position-relative">
+                                <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
+                                        class="select2 form-select select2-hidden-accessible"
+                                        tabindex="-1" aria-hidden="true" data-select2-id="10">
+                                    <option value="10" data-select2-id="12">مرفوضة</option>
+                                    <option value="25">محلولة</option>
+                                    <option value="50">غير محلولة</option>
+                                    <option value="100">مرفوعة</option>
+                                </select><span class="select2 select2-container select2-container--default select2-container--focus" dir="rtl" data-select2-id="11" style="width: 117.083px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-DataTables_Table_0_length-np-container"><span class="select2-selection__rendered" id="select2-DataTables_Table_0_length-np-container" role="textbox" aria-readonly="true" title="مرفوضة">مرفوضة</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <div class="row mx-2  ">
-
-
-                        <div class="col-4 col-md-2" style="text-align-last: start;">
-                            <div class="me-3 table-type">
-                                <label class="form-label"> عرض حسب</label>
-                                <div class="dataTables_length" id="DataTables_Table_0_length">
-                                    <label>
-                                        <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
-                                                class="select2 form-select">
-                                            <option value="10">الفترة</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                        </select>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-2 " style="text-align-last: center;">
-
-                            <div class="dataTables_length " id="DataTables_Table_0_length">
+                </div>
+                @*<div class="row">
+                        <label class="form-label"> عرض حسب</label>
+                        <div class="col-md-2">
+                            <div class="dataTables_length" id="DataTables_Table_0_length">
                                 <label>
-                                    <select class="form-control" id="FilterType" asp-items="@ViewBag.StatusCompalints">
-                                        <option value="0"> النوع</option>
-
-
-                                    </select>
-                                </label>
-                            </div>
-
-                        </div>
-                        <div class="col-4 col-md-2" style="text-align-last: end;">
-                            <div class="dataTables_length " id="DataTables_Table_0_length">
-                                <label>
-                                    <select name="DataTables_Table_0_length" id="typeComp" class="select2 form-select" aria-controls="DataTables_Table_0">
+                                    <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="select2 form-select">
                                         <option value="0">الحالة</option>
                                         <option value="محلولة">محلولة</option>
                                         <option value="مرفوضة">مرفوضة</option>
@@ -53,50 +89,59 @@
                                     </select>
                                 </label>
                             </div>
-
                         </div>
+                        <div class="col-md-2">
+                            <div class="dataTables_length " id="DataTables_Table_0_length">
+                                <label>
+                                    <select class="form-control" id="FilterType" asp-items="@ViewBag.StatusCompalints">
+                                        <option value="0"> النوع</option>
 
-
-                        @*<div class="col-md-3">
-                                <div class="btn-group" style=" margin-left:20px; width: auto;
-                                    height: 48px;">
-                                    <button asp-action="AddCompalint" data-toggle="modal" type="button" class="btn btn-primary">
-
-                                        <i class="btn-label-light">  إضافة شكوى</i>
-
-
-
-                                    </button>
-                                </div>
-                            </div>*@
-
-
-
-
-                    </div>
-                        <div class="offcanvas-header border-bottom">
-                            <button asp-action="AddCompalint" type="submit" class="btn btn-primary me-2">إضافة الشكوى </button>
-
+                                    </select>
+                                </label>
+                            </div>
                         </div>
+                        <div class=" col-md-2">
+                            <div class="dataTables_length " id="DataTables_Table_0_length">
+                                <label>
+                                    <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="select2 form-select">
+                                        <option value="10">المحافظة</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                    </div>*@
 
-                    <div class="dt-buttons ">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="dropdown" style="text-align-last: end;">
 
-                        @{
-                            int totalCompalints = ViewBag.TotalCompalints;
-                            <span class="badge bg-label-primary badgess " style="padding-left: 36px;
+
+                            <span class="badge bg-label-primary badgess " style="    padding-left: 36px;
                         line-height: 1.99;
-                        margin-right:auto;
-                        margin-top:10px;
-                        width: 152.35px;">@totalCompalints العدد الكلي </span>
-                        }
+                        width: 152.35px;">العدد الكلي 876</span>
+
+                        </div>
+
                     </div>
+
+
+                    <div class="col">
+                        <button type="button" asp-action="AddCompalint" class="btn btn-primary btn-customized"><span><i class="bx bx-plus me-0 me-lg-2"></i><span class="d-none d-lg-inline-block">اضافة شكوى</span></span></button>
+                    </div>
+
+
+
 
                 </div>
 
             </div>
 
-            <div class="card-datatable text-nowrap">
-             <table id="dataTable" class="table table-striped" style="width:100%"> 
+
+            <div class="table-responsive text-nowrap">
+                <table id="dataTable" class="table table-striped" style="width:100%">
 
                     <thead>
                         <tr>
@@ -157,10 +202,17 @@
 
         </div>
     </div>
+
 </div>
 
 
 
+
+
+
+<script src="/assets/js/Cascading/jquery-3.5.1.js"></script>
+<script src="/assets/js/Cascading/dataTables.bootstrap5.min.js"></script>
+<script src="/assets/js/Cascading/jquery.dataTables.min.js"></script>>
 
 
 <script>

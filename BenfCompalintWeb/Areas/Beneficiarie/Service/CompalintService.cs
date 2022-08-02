@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BenfCompalintWeb.Areas.Beneficiarie.ViewModels;
 using BenfCompalintWeb.Models;
 using BenfCompalintWeb.Models.Data.Base;
 

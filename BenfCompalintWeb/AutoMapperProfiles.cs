@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BenfCompalintWeb.Areas.AdminService.Model;
 using BenfCompalintWeb.Areas.AdminService.ViewModel;
+using BenfCompalintWeb.Areas.UsersService.ViewModel;
 
 namespace BenfCompalintWeb
 {
@@ -20,7 +21,7 @@ namespace BenfCompalintWeb
     {
         public UserProfile()
         {
-            CreateMap<ApplicationUser,Data.ViewModels.UserViewModel >()
+            CreateMap<ApplicationUser,UserViewModel >()
                 .ForMember(u=>u.Password , op=>op.MapFrom(u=>u.PasswordHash !=null));
 
             CreateMap<ApplicationUser, AdminViewModel>()

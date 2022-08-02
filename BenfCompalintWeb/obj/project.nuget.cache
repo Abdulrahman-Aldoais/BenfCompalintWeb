@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f05VqcDitUA7moUargT5TGgQneedu5hcmDI55ZkyBaGau3h2qrHuAA6JiROu5yLNoNrNwLU72CCCkzWEYIYMNA==",
+  "dgSpecHash": "HnvG/KGSvKuMyeplSHT6ozYPZDPf9n8BXn1/AucHISsEIP50cMkrJVUPyPV/PqqiItq5PwYzuHJl/tka0e1D1Q==",
   "success": true,
-  "projectFilePath": "E:\\NewProject\\BenfCompalintWeb\\BenfCompalintWeb\\BenfCompalintWeb.csproj",
+  "projectFilePath": "E:\\My_GitHub\\BenfCompalintWeb\\BenfCompalintWeb\\BenfCompalintWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\APS\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\APS\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

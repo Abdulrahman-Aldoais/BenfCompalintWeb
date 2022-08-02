@@ -1,5 +1,5 @@
 ﻿using BenfCompalintWeb.Areas.AdminService.Model;
-using BenfCompalintWeb.Data.ViewModels;
+using BenfCompalintWeb.Areas.UsersService.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;

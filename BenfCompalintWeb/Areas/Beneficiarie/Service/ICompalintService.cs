@@ -1,10 +1,10 @@
 ﻿using BenfCompalintWeb.Models;
 using BenfCompalintWeb.Models.Data.Base;
-using BenfCompalintWeb.Data.ViewModels;
 
 using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
+using BenfCompalintWeb.Areas.Beneficiarie.ViewModels;
 
 namespace BenfCompalintWeb.Areas.Beneficiarie.Service
 {

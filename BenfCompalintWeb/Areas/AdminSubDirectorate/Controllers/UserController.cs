@@ -2,7 +2,6 @@
 using BenfCompalintWeb.Areas.AdminService.Service;
 using BenfCompalintWeb.Areas.AdminService.ViewModel;
 using BenfCompalintWeb.Areas.VillagesUsers.Models;
-using BenfCompalintWeb.Data.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
