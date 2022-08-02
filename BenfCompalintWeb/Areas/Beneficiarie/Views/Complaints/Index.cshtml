@@ -1,0 +1,206 @@
+﻿
+@model IEnumerable<Compalint>
+
+<div class="container">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h2>عرض <b>الشكاوى</b></h2>
+                    </div>
+
+                    <div class="row mx-2  ">
+
+
+                        <div class="col-4 col-md-2" style="text-align-last: start;">
+                            <div class="me-3 table-type">
+                                <label class="form-label"> عرض حسب</label>
+                                <div class="dataTables_length" id="DataTables_Table_0_length">
+                                    <label>
+                                        <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
+                                                class="select2 form-select">
+                                            <option value="10">الفترة</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-2 " style="text-align-last: center;">
+
+                            <div class="dataTables_length " id="DataTables_Table_0_length">
+                                <label>
+                                    <select class="form-control" id="FilterType" asp-items="@ViewBag.StatusCompalints">
+                                        <option value="0"> النوع</option>
+
+
+                                    </select>
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="col-4 col-md-2" style="text-align-last: end;">
+                            <div class="dataTables_length " id="DataTables_Table_0_length">
+                                <label>
+                                    <select name="DataTables_Table_0_length" id="typeComp" class="select2 form-select" aria-controls="DataTables_Table_0">
+                                        <option value="0">الحالة</option>
+                                        <option value="محلولة">محلولة</option>
+                                        <option value="مرفوضة">مرفوضة</option>
+                                        <option value="مقبولة">مقبولة</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                        </div>
+
+
+                        @*<div class="col-md-3">
+                                <div class="btn-group" style=" margin-left:20px; width: auto;
+                                    height: 48px;">
+                                    <button asp-action="AddCompalint" data-toggle="modal" type="button" class="btn btn-primary">
+
+                                        <i class="btn-label-light">  إضافة شكوى</i>
+
+
+
+                                    </button>
+                                </div>
+                            </div>*@
+
+
+
+
+                    </div>
+                        <div class="offcanvas-header border-bottom">
+                            <button asp-action="AddCompalint" type="submit" class="btn btn-primary me-2">إضافة الشكوى </button>
+
+                        </div>
+
+                    <div class="dt-buttons ">
+
+                        @{
+                            int totalCompalints = ViewBag.TotalCompalints;
+                            <span class="badge bg-label-primary badgess " style="padding-left: 36px;
+                        line-height: 1.99;
+                        margin-right:auto;
+                        margin-top:10px;
+                        width: 152.35px;">@totalCompalints العدد الكلي </span>
+                        }
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-datatable text-nowrap">
+             <table id="dataTable" class="table table-striped" style="width:100%"> 
+
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TitleComplaint)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CompDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Governorates)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.StagesComplaint)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.StatusCompalint)
+                            </th>
+                            <th>اجراء</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (Model.Count() == 0)
+                        {
+                            <tr>
+                                <td colspan="3" style="color:red">
+                                    لا يوجد نتائج
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TitleComplaint)
+                                    </td>
+                                    <td> @Html.DisplayFor(modelItem => item.CompDate)</td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Governorates.Name)
+                                    </td>
+                                    <td> @Html.DisplayFor(modelItem => item.StatusCompalint.Name)</td>
+                                    <td> @Html.DisplayFor(modelItem => item.TypeComplaint.Type)</td>
+                                    <td>
+                                        <a href="@Url.Action("ViewCompalintDetails", "Complaints", new { id = item.Id })">
+                                            <i> عرض</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable({
+            "language": {
+                "lengthMenu": "عرض _MENU_ سجلات  ",
+
+                "info": "عرض صفحة _PAGE_ من _PAGES_",
+                "infoEmpty": "ليس هناك اي بيانات متاحة",
+                "infoFiltered": "(الصافي من  _MAX_ اجمالي الصفوف)",
+                "search": "بحث"
+            }
+
+
+        });
+    });
+</script>
+
+
+
+
+
+<script>
+    //فلترة نوع الشاكي
+    $("#FilterType").change(function () {
+        var value = $(this).val().toLowerCase();
+        $(".table tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
+    //
+</script>
+<script>
+
+    $("#typeComp").change(function () {
+        var value = $(this).val().toLowerCase();
+        $(".table tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
+
+</script>
