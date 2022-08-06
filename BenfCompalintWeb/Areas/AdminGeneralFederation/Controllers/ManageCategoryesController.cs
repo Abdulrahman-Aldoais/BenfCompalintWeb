@@ -1,7 +1,9 @@
 ﻿using BenfCompalintWeb.Areas.AdminGeneralFederation.Service;
+using BenfCompalintWeb.Const;
 using BenfCompalintWeb.Models;
 using BenfCompalintWeb.Models.CompalintInformation;
 using BenfCompalintWeb.Models.Data.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,6 +13,8 @@ using System.Threading.Tasks;
 namespace BenfCompalintWeb.Areas.AdminGeneralFederation.Controllers
 {
     [Area("AdminGeneralFederation")]
+    //[Route("AdminGeneralFederation/[Controller]/[Action]/{id?}")]
+    //[Authorize(Roles = UserRoles.AdminGeneralFederation)]
     public class ManageCategoryesController : Controller
     {
 
@@ -40,7 +44,11 @@ namespace BenfCompalintWeb.Areas.AdminGeneralFederation.Controllers
             return View(allCatCommunications);
         }
 
-
+        
+        public IActionResult Circulars()
+        {
+            return View();
+        }
         public async Task<IActionResult> AllCategoriesComplaints()
         {
             var allCategoriesComplaints = await _service.GetAllGetCompAsync();

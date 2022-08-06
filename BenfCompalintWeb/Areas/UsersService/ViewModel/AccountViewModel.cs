@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BenfCompalintWeb.Enums;
+using BenfCompalintWeb.Models;
+using Microsoft.AspNetCore.Identity;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace BenfCompalintWeb.Areas.UsersService.ViewModel
@@ -21,6 +24,7 @@ namespace BenfCompalintWeb.Areas.UsersService.ViewModel
         public string PhoneNumber { get; set; }
         //[Timestamp]
         public DateTime DateCreated { get; set; }
+        public ApplicationRole Roles { get; set; }
 
         public int? GovernorateId { get; set; }
 

@@ -7,11 +7,12 @@ namespace BenfCompalintWeb.Enums
 {
     public enum Roles
     {
+        AdminGeneralFederation = 1,
+        AdminGovernorate,
+        AdminDirectorate,
+        AdminSubDirectorate,
+        AdminVillages,
         Beneficiarie,
-        Governorate,
-        Directorate,
-        SubDirectorate,
-        Villages
-        
+
     }
 }

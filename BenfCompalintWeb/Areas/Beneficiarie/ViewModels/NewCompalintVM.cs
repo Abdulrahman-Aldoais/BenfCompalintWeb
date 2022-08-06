@@ -1,4 +1,4 @@
-﻿using BenfCompalintWeb.Areas.AdminService.Model;
+﻿using BenfCompalintWeb.Areas.UsersService.Model;
 using BenfCompalintWeb.Models;
 using BenfCompalintWeb.Models.CompalintInformation;
 using System;
@@ -11,9 +11,6 @@ namespace BenfCompalintWeb.Areas.Beneficiarie.ViewModels
 {
     public class NewCompalintVM
     {
-
-
-        public Guid Id { get; set; }
         [Required(ErrorMessage = "يجب ان تقوم بكتابة هذه الحقل ")]
         public string TitleComplaint { get; set; }
 
@@ -28,9 +25,6 @@ namespace BenfCompalintWeb.Areas.Beneficiarie.ViewModels
 
         public int StatusCompalintId { get; set; } = 1;
 
-        //RelationShipes one to many with Compalints and StatusCompalint
-
-        //RelationShipes one to many with Compalints and StagesComplaint
 
         public int StagesComplaintId { get; set; } = 1;
 
@@ -44,18 +38,11 @@ namespace BenfCompalintWeb.Areas.Beneficiarie.ViewModels
 
         public int? DirectorateId { get; set; }
 
-
-        ////RelationShipes one to many with Compalints and Village
-        //[Required(ErrorMessage = "يجب ان تقوم بإختبار المنطقة المحددة ")]
         public int? SubDirectorateId { get; set; }
 
-
-        //RelationShipes one to many with Compalints and Village
         //[Required(ErrorMessage = "يجب ان تقوم بإختبار المنطقة المحددة ")]
         public int? VillageId { get; set; }
         //[ForeignKey("VillageId")]
-
-
 
         public DateTime CompDate { get; set; }
         //[Timestamp]

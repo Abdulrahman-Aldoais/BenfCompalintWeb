@@ -1,21 +1,29 @@
-﻿using BenfCompalintWeb.Models;
+﻿using BenfCompalintWeb.Const;
+using BenfCompalintWeb.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BenfCompalintWeb.Areas.AdminService.Model
+namespace BenfCompalintWeb.Areas.UsersService.Model
 {
     public class ApplicationUser : IdentityUser
     {
-
+        public virtual ICollection<ApplicationUserClaim> Claims { get; set; }
+        public virtual ICollection<ApplicationUserLogin> Logins { get; set; }
+        public virtual ICollection<ApplicationUserToken> Tokens { get; set; }
+        public virtual ICollection<ApplicationUserRole> UserRoles { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        [NotMapped]
+        public string FullName { get { return FirstName + " " + LastName; } }
+
         public string IdentityNumber { get; set; }
-        public IdentityRole Roles { get; set; }
         public string PhoneNumber { get; set; }
+        public ApplicationRole Role { get; set; }
         public int? GovernorateId { get; set; }
         public virtual Governorate Governorates { get; set; }
         public int? DirectorateId { get; set; }
@@ -24,19 +32,26 @@ namespace BenfCompalintWeb.Areas.AdminService.Model
         public virtual SubDirectorate SubDirectorate { get; set; }
         public int? VillageId { get; set; }
         public virtual Village Village { get; set; }
+        public virtual ICollection<Compalint> CompalintHasSolo { get; set; }
+
         public int? SocietyId { get; set; }
         public virtual Society Societies { get; set; }
         //public IEnumerable<string> Roles { get; set; }
         public byte[] ProfilePicture { get; set; }
         public bool IsBlocked { get; set; }
+        [DataType(DataType.Password)]
         public string Password { get; set; }
+        [Compare("Password")]
+        public string ConfirmPassword { get; set; }
         public DateTime DateOfBirth { get; set; }
         public DateTime CreatedDate { get; set; }
+
+
 
     }
 
 
-    public class Beneficiarie : IdentityUser
+    public class Beneficiarie 
     {
         public Beneficiarie()
         {
@@ -84,3 +99,6 @@ namespace BenfCompalintWeb.Areas.AdminService.Model
 
     }
 }
+
+
+

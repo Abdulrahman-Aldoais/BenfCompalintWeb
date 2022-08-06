@@ -1,11 +1,13 @@
-﻿using BenfCompalintWeb.Areas.AdminService.Model;
-using BenfCompalintWeb.Areas.AdminService.Service;
-using BenfCompalintWeb.Areas.AdminService.ViewModel;
+﻿using BenfCompalintWeb.Areas.AdminService.Service;
+using BenfCompalintWeb.Areas.UsersService.ViewModel;
 using BenfCompalintWeb.Areas.VillagesUsers.Models;
+using BenfCompalintWeb.Const;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
+using BenfCompalintWeb.Areas.UsersService.Model;
+using BenfCompalintWeb.Models;
 
 namespace BenfCompalintWeb.Areas.AdminSubDirectorate.Controllers
 {
@@ -15,12 +17,18 @@ namespace BenfCompalintWeb.Areas.AdminSubDirectorate.Controllers
         private readonly IUserService userService;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
+        private readonly RoleManager<ApplicationRole> roleManager;
 
-        public UserController(IUserService userService, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public UserController(
+            IUserService userService,
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager,
+            RoleManager<ApplicationRole> roleManager)
         {
             this.userService = userService;
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.roleManager = roleManager;
         }
         public IActionResult Index()
         {
@@ -85,21 +93,32 @@ namespace BenfCompalintWeb.Areas.AdminSubDirectorate.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddUser(AdminViewModel userVM)
+        public async Task<IActionResult> AddUser(AdminUserViewModel userVM)
         {
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser
                 {
-                    UserName = userVM.FullName,
+                    FirstName = userVM.FirstName,
+                    LastName = userVM.LastName,
+                    //UserName = userVM.IdentityNumber,
                     Email = userVM.IdentityNumber,
                     PhoneNumber = userVM.PhoneNumber,
+                    GovernorateId = userVM.GovernorateId,
+                    DirectorateId = userVM.DirectorateId,
+                    SubDirectorateId = userVM.SubDirectorateId,
+                    VillageId = userVM.VillageId,
+                    IsBlocked = userVM.IsBlocked,
+                    SocietyId = userVM.SocietyId,
+                    ProfilePicture = userVM.ProfilePicture,
+                    Password = userVM.Password,
 
                 };
                 var result = await userManager.CreateAsync(user, userVM.Password);
                 if (result.Succeeded)
                 {
                     await signInManager.SignInAsync(user, isPersistent: false);
+                    await userManager.AddToRoleAsync(user, UserRoles.AdminGeneralFederation);
                     return RedirectToAction("Index", "AllUsers");
 
                 }

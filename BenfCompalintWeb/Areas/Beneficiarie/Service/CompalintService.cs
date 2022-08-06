@@ -86,15 +86,15 @@ namespace BenfCompalintWeb.Areas.Beneficiarie.Service
         //    return (IQueryable<Compalint>)compList;
         //}
 
-        public IQueryable<Compalint> GetCompalintsByStutas(string id)
-        {
-            throw new NotImplementedException();
-        }
+        //public IQueryable<Compalint> GetCompalintsByStutas(string id)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public IQueryable<NewCompalintVM> GetBy(string userId)
-        {
-            throw new NotImplementedException();
-        }
+        //public IQueryable<NewCompalintVM> GetBy(string userId)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public Task<NewCompalintVM> FindAsync(string id)
         {

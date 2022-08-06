@@ -1,4 +1,5 @@
 ﻿using BenfCompalintWeb.Models.CompalintInformation;
+using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 
 namespace BenfCompalintWeb.Models.Data.ViewModels
@@ -11,6 +12,7 @@ namespace BenfCompalintWeb.Models.Data.ViewModels
         
             TypeComplaints = new List<TypeComplaint>();
             StatusCompalints = new List<StatusCompalint>();
+            //identityRoles = new List<ApplicationRole>();
 
 
         }
@@ -20,5 +22,6 @@ namespace BenfCompalintWeb.Models.Data.ViewModels
       
         public List<TypeComplaint> TypeComplaints { get; set;}
         public List<StatusCompalint> StatusCompalints { get; set; }
+        //public List<ApplicationRole> identityRoles { get; set; }
     }
 }

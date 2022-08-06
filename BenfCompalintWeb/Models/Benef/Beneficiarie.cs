@@ -1,4 +1,4 @@
-﻿using BenfCompalintWeb.Areas.AdminService.Model;
+﻿using BenfCompalintWeb.Areas.UsersService.Model;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

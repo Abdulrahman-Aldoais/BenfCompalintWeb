@@ -1,4 +1,4 @@
-﻿using BenfCompalintWeb.Areas.AdminService.Model;
+﻿using BenfCompalintWeb.Areas.UsersService.Model;
 using BenfCompalintWeb.Constants;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;

@@ -1,4 +1,5 @@
-using BenfCompalintWeb.Areas.AdminService.Model;
+using BenfCompalintWeb.Areas.AdminGeneralFederation.Service;
+using BenfCompalintWeb.Areas.UsersService.Model;
 using BenfCompalintWeb.Areas.AdminService.Service;
 using BenfCompalintWeb.Areas.Beneficiarie.Service;
 using BenfCompalintWeb.Areas.Beneficiaries.Data.Base;
@@ -33,36 +34,61 @@ namespace BenfCompalintWeb
         {
             services.AddControllersWithViews();
 
+            services
+    .AddDbContext<AppCompalintsContextDB>(
+        b => b.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+              .UseLazyLoadingProxies());
 
-            services.AddDbContext<AppCompalintsContextDB>(options =>
+            services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
-            });
+
+            }).AddDefaultUI().AddEntityFrameworkStores<AppCompalintsContextDB>().AddDefaultTokenProviders();
 
 
-            //services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            //services.AddDbContext<AppCompalintsContextDB>(options =>
             //{
-               
-            //}).AddEntityFrameworkStores<AppCompalintsContextDB>();
+            //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            //});
 
 
+            //services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
+            //{
 
+            //}).AddDefaultUI().AddEntityFrameworkStores<AppCompalintsContextDB>().AddDefaultTokenProviders();
+
+        
             // Add services to the container.
 
             services.AddScoped<ICompalintService, CompalintService>();
             services.AddScoped<IVillageService, VillageService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ILocationRepo<Governorate>, GovernorateRepo>();
             services.AddScoped<ILocationRepo<Directorate>, DirectorateRepo>();
             services.AddScoped<ILocationRepo<SubDirectorate>, SubDirectorateRepo>();
             services.AddScoped<ILocationRepo<Village>, VillageRepo>();
             services.AddAdminServices();
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-            .AddEntityFrameworkStores<AppCompalintsContextDB>()
-            .AddDefaultUI()
-            .AddDefaultTokenProviders();
+
+
+
+
+
+            //services.AddIdentity<ApplicationUser, IdentityRole>()
+            //.AddEntityFrameworkStores<AppCompalintsContextDB>()
+            //.AddDefaultUI()
+            //.AddDefaultTokenProviders();
             services.AddControllersWithViews();
             // Add services to the container.
+
+
+
+    //        services
+    //.AddDbContext<ApplicationDbContext>(
+    //    b => b.UseSqlServer(connectionString)
+    //          .UseLazyLoadingProxies())
+    //.AddDefaultIdentity<ApplicationUser>()
+    //.AddEntityFrameworkStores<ApplicationDbContext>();
 
 
 
@@ -97,9 +123,14 @@ namespace BenfCompalintWeb
             {
 
               endpoints.MapControllerRoute(
-               name: "areas",
-               pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+               name: "Beneficiarie",
+               pattern: "{area:exists}/{controller=Complaints}/{action=Index}/{id?}"
              );
+              endpoints.MapControllerRoute(
+              name: "AdminGeneralFederation",
+              pattern: "{area:exists}/{controller=ManageCategoryes}/{action=Index}/{id?}"
+            );
+                
 
 
                 endpoints.MapControllerRoute(

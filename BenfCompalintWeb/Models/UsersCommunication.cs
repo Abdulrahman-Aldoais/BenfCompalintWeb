@@ -1,4 +1,4 @@
-using BenfCompalintWeb.Areas.AdminService.Model;
+using BenfCompalintWeb.Areas.UsersService.Model;
 using BenfCompalintWeb.Models.Data.Base;
 using System;
 using System.ComponentModel.DataAnnotations;

@@ -1,5 +1,10 @@
 ﻿<!-- Content -->
+@model BenfCompalintWeb.Areas.UsersService.ViewModel.AdminUserViewModel
 
+@{
+    ViewData["Title"] = "Regster";
+    Layout = "~/Areas/Beneficiarie/Views/Shared/_Layout.cshtml";
+}
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="breadcrumb-wrapper py-3 mb-4">
         <span class="text-muted fw-light">الحسابات   /</span> إضافة حساب موظف
@@ -101,7 +106,7 @@
                                 <label class="form-label" for="country">المحافظة</label>
                                 <select id="Governorate" class="select2 form-select" name="Governorate">
                                     <option value="">تحديد</option>
-                                 
+
                                 </select>
                             </div>
                             <div class="col-md-6 mb-3">
@@ -119,7 +124,7 @@
                                 <select id="insulation" class="select2 form-select" name="insulation">
                                     <option value="">تحديد</option>
                                     <option value="-12">عزلة 888</option>
-                                  
+
                                 </select>
                             </div>
                             <div class="col-md-6 mb-3">
